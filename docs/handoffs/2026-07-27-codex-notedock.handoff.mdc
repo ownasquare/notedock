@@ -64,7 +64,7 @@ Fully implemented:
 - Six durable screenshots under `proof/screenshots/`.
 - README, security policy, contributing guide, changelog, license, product docs, and completion doc.
 
-Partially built or broken: none known. GitHub publication is verified; registry closeout remains.
+Partially built or broken: none known. The app-level continuation queue is empty.
 
 Deliberately deferred: accounts, upload, media hosting, transcription, AI inference, NLE sync,
 client approvals, collaboration, analytics, payments, provider integrations, and hosted
@@ -174,10 +174,11 @@ add payments, call paid providers, or use any other publication path.
 
 ## 10. Next Steps & Prioritized Backlog
 
-Next run mode: ACTIVE_CONTINUATION
+Next run mode: INVENTORY_REFRESH_REQUIRED
 
-Finish the immutable registry update and final lane-state closeout. Do not ideate or claim another
-app while Lane 05 remains active.
+The external immutable registry and lane state must be read before any future action. If they show
+this continuation complete, discover and reserve a different materially unique app; do not reopen
+NoteDock as unfinished work.
 
 ## 11. Continuation & Working Style Instructions
 

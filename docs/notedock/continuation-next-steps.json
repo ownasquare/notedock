@@ -1,13 +1,1 @@
-[
-  {
-    "id": "registry-closeout",
-    "title": "Close the registry and continuation handoff",
-    "what": "Update the immutable app record, run record, app completion documentation, and canonical handoff with the GitHub receipt.",
-    "where": "/Users/fortunevieyra/Documents/Github/ai-projects/factory-apps/lane-05/notedock",
-    "how": "Remove only completed queue items and call complete-app only after the queue is empty and GitHub push proof is recorded.",
-    "test": "Read back the final lane state, GitHub repository, local HEAD, remote HEAD, and clean app worktree.",
-    "validate": "Keep local, GitHub publication, hosted deployment, provider, payment, usage, buyer, and commercial proof separate.",
-    "follow_up": "Stop when no steps remain or preserve the exact terminal time-cap/blocker state.",
-    "estimate_minutes": 25
-  }
-]
+[]
