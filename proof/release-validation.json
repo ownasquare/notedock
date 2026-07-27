@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "app": "notedock",
+  "generated_at": "2026-07-27T10:33:00-0700",
+  "tests_passed": true,
+  "secret_scan_passed": true,
+  "license_check_passed": true,
+  "browser_proof": {
+    "status": "passed",
+    "test_count": 21,
+    "projects": [
+      "desktop",
+      "tablet",
+      "mobile"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "screenshots_manually_inspected": 6
+  },
+  "validation_environment": "Local macOS Node and Chromium workflow on loopback port 4175.",
+  "validation_scope": "Clean install, unit, format, lint, type, secret, license, vulnerability, package, workflow, export, accessibility, responsive, and theme proof.",
+  "data_integrity_classification": "Deterministic local parsing with synthetic non-sensitive revision-note fixtures.",
+  "mock_fixture_usage": "Synthetic text fixtures only; no backend, provider, network mock, seeded account, or production data.",
+  "production_validation_status": "not_attempted",
+  "localhost_validation_integrity": "Real static app code and browser APIs; no backend or provider path exists.",
+  "warning_issue_triage": "All discovered changed-surface issues fixed and revalidated; no known warning remains.",
+  "warning_suppression_status": "not_suppressed",
+  "commands": [
+    "npm ci --ignore-scripts",
+    "npm test",
+    "npm run format:check",
+    "npm run lint",
+    "npm run typecheck",
+    "npm run audit:secrets",
+    "npm run audit:license",
+    "npm audit --audit-level=high",
+    "npm run test:e2e",
+    "npm run package:smoke"
+  ]
+}

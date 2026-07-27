@@ -1,5 +1,5 @@
 ---
-description: "Validated local completion and continuation package for NoteDock"
+description: "Validated release continuation package for NoteDock"
 alwaysApply: false
 ---
 
@@ -64,11 +64,11 @@ Fully implemented:
 - Six durable screenshots under `proof/screenshots/`.
 - README, security policy, contributing guide, changelog, license, product docs, and completion doc.
 
-Partially built or broken: none known.
+Partially built or broken: none known. GitHub publication is the only pending release step.
 
 Deliberately deferred: accounts, upload, media hosting, transcription, AI inference, NLE sync,
-client approvals, collaboration, analytics, payments, provider integrations, deployment, and
-publication.
+client approvals, collaboration, analytics, payments, provider integrations, and hosted
+deployment.
 
 Flow: pasted text → source-header/timecode parser → stable chronological grouping → source-preserved
 checklist → local Markdown clipboard or CSV download.
@@ -94,6 +94,10 @@ checklist → local Markdown clipboard or CSV download.
 - Corrected issues exposed by E2E and screenshot inspection: hidden content, skip-link state, mobile
   textarea position, theme locator state, Playwright browser availability, and audit self-matches.
 - Added real CSV download and clipboard-content proof.
+- Reconciled the adopted app against clean `main` and its immutable registry records.
+- Hardened malformed frame timecodes, CSV formula-leading cells, and clipboard-denial recovery.
+- Passed 8 unit tests and 21 Playwright E2E/proof cases from a clean install.
+- Manually inspected all six regenerated responsive light/dark screenshots.
 
 ## 5. Testing, Validation & Quality Framework
 
@@ -123,6 +127,10 @@ unchanged in Playwright against the local server; there is no mocked backend.
 - Shared developer machines can already use a conventional preview port. NoteDock uses `4175`
   after `4173` was confirmed to belong to an unrelated process; never kill an unverified listener.
 - Export assertions must reflect the real Markdown contract, including bold timecode delimiters.
+- Invalid framed timecodes must remain visible and untimed with a precise issue rather than being
+  silently accepted.
+- Clipboard APIs can be denied; preserve the CSV recovery path and user-visible status.
+- CSV exports must neutralize formula-leading client text before spreadsheet use.
 
 ## 7. Established Processes & Effective Patterns
 
@@ -148,8 +156,9 @@ Known limitations are deliberate product boundaries, not hidden debt. Do not cha
 - Playwright ownership of E2E.
 - MIT licensing and permissive dependency boundary.
 
-Do not add a remote, push, deploy, publish, contact users, add live payments, or call paid providers
-without explicit new authority.
+The active lane continuation explicitly authorizes only creation/push of the reserved public
+`ownasquare/notedock` repository through the account-scoped publisher. Do not deploy, contact
+users, add payments, call paid providers, or use any other publication path.
 
 ## 9. Key Artifacts & References
 
@@ -165,12 +174,11 @@ without explicit new authority.
 
 ## 10. Next Steps & Prioritized Backlog
 
-Next run mode: INVENTORY_REFRESH_REQUIRED
+Next run mode: ACTIVE_CONTINUATION
 
-There is no continuation work on NoteDock. The next accepted lane run must inventory the current
-registry and create a different materially unique app from a new qualified claim. The automation
-queue should begin with the nine unresearched candidate areas in the lane record, refresh public
-evidence, add at least one newly discovered problem, and build only if every gate passes.
+Finish the release receipt, local commit, account-scoped GitHub publication, matching remote SHA
+readback, immutable registry update, and final lane-state closeout. Do not ideate or claim another
+app while Lane 05 remains active.
 
 ## 11. Continuation & Working Style Instructions
 

@@ -2,6 +2,15 @@
 
 All notable changes are documented here.
 
+## [Unreleased]
+
+### Changed
+
+- Preserve malformed frame timecodes as explicitly untimed notes with a visible validation issue.
+- Neutralize formula-leading cells in CSV exports.
+- Recover from clipboard permission denial with a visible CSV fallback.
+- Refresh the full release validation and responsive light/dark proof matrix.
+
 ## [0.1.0] - 2026-07-27
 
 ### Added

@@ -109,8 +109,19 @@ export function parseRevisionNotes(input, frameRate = 24) {
     }
 
     const cleanedBullet = line.replace(/^[-*•]\s*/, "");
+    const fourPartCandidate = cleanedBullet.match(FOUR_PART);
     const time = extractTimecode(cleanedBullet, frameRate);
-    let withoutTime = time ? cleanedBullet.replace(time.raw, " ") : cleanedBullet;
+    const invalidFrameTimecode = fourPartCandidate && !time ? fourPartCandidate : null;
+    if (invalidFrameTimecode) {
+      issues.push(
+        `Line ${index + 1} uses frame ${Number(invalidFrameTimecode[4])} outside ${frameRate} fps; the note was preserved as untimed.`,
+      );
+    }
+    let withoutTime = time
+      ? cleanedBullet.replace(time.raw, " ")
+      : invalidFrameTimecode
+        ? cleanedBullet.replace(invalidFrameTimecode[0], " ")
+        : cleanedBullet;
     withoutTime = withoutTime
       .replace(/^\s*(?:at|@)\s+/i, "")
       .replace(/^[\s—–:|-]+|[\s—–|]+$/g, "")
@@ -206,7 +217,11 @@ export function toMarkdown(projectName, notes) {
  */
 export function toCsv(notes) {
   /** @param {unknown} value */
-  const escape = (value) => `"${String(value).replaceAll('"', '""')}"`;
+  const escape = (value) => {
+    const text = String(value);
+    const spreadsheetSafe = /^[=+\-@\t\r]/.test(text) ? `'${text}` : text;
+    return `"${spreadsheetSafe.replaceAll('"', '""')}"`;
+  };
   const header = ["timecode", "note", "reviewer", "source", "duplicate", "same_moment_count"];
   const rows = notes.map((note) => [
     note.timecode ?? "",

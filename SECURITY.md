@@ -19,6 +19,8 @@ Treat revision notes as client-confidential material:
 - do not paste credentials, private keys, or access tokens.
 
 Text is rendered with DOM `textContent`, not HTML injection. NoteDock never executes pasted text.
+CSV cells beginning with spreadsheet-formula control characters are prefixed with an apostrophe
+before export so pasted client text is not interpreted as a formula when opened.
 
 ## Reporting
 

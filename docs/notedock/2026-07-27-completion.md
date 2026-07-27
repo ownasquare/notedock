@@ -43,6 +43,18 @@ are in
 There is no backend, account, telemetry, analytics, cookie, provider, or AI inference. Input stays
 in the active browser tab. Tests use synthetic revision notes only.
 
+## Continuation hardening
+
+The publication continuation reconciled the initial commit and then made three bounded reliability
+changes without expanding the product:
+
+- malformed frame timecodes are stripped from note text, preserved as untimed, and reported;
+- formula-leading CSV cells are apostrophe-prefixed before spreadsheet use; and
+- clipboard denial produces a visible recovery message while leaving CSV download available.
+
+The focused regression proof passed 8 unit tests and 18 workflow-only Playwright cases. The full
+matrix passed 21 Playwright cases across desktop, tablet, and mobile.
+
 ## Validation
 
 The final commit is created only after these commands pass:
@@ -69,7 +81,7 @@ is stored in `proof/screenshots/` for desktop, tablet, and mobile in both light 
 - Hosted-dev proof: not attempted; no deployment authority.
 - Production proof: not attempted; no production authority.
 - Provider/dashboard proof: not applicable; no provider integration.
-- Publication proof: not attempted.
+- Publication proof: pending account-scoped GitHub publisher and remote SHA readback.
 - Payment proof: not attempted; no live payments.
 - Demand proof: public pain/workaround evidence only. There is no buyer, usage, payment, or market
   proof.
@@ -77,10 +89,10 @@ is stored in `proof/screenshots/` for desktop, tablet, and mobile in both light 
 
 ## Commit and release boundary
 
-This record is part of the validated local initial commit on branch `main`. The immutable registry
-completion record and automation closeout record the exact commit SHA after Git creates it. No
-remote repository, push, deploy, publish, user contact, or paid provider action is authorized or
-attempted.
+The validated hardening changes will be committed on local branch `main` before publication.
+GitHub repository creation and push are authorized only for the reserved
+`ownasquare/notedock` target through the account-scoped publisher. Hosted deployment, provider
+actions, payments, user contact, and other publication surfaces remain unauthorized.
 
 ## Warning triage
 
@@ -94,5 +106,8 @@ attempted.
   default `4175` without terminating the unrelated process.
 - Initial export assertion omitted Markdown emphasis delimiters: `fixed_now` after clipboard
   readback exposed the exact generated format.
+- Malformed frame timecodes lacked a precise recovery issue: `fixed_now`.
+- CSV spreadsheet-formula interpretation risk: `fixed_now`.
+- Clipboard permission denial was unhandled: `fixed_now`.
 - Remaining known warning: none.
 - Warning suppression: `not_suppressed`.

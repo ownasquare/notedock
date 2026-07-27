@@ -7,8 +7,10 @@ clients send feedback through email, chat, documents, and review tools. It parse
 timecodes, keeps source and reviewer labels, groups notes at the same moment, flags exact repeats,
 and exports Markdown or CSV.
 
-**Proof status:** local open-source experiment. There is no hosted, production, provider,
-publication, payment, buyer, usage, or demand proof.
+**Proof status:** validated local open-source experiment. Public GitHub repository publication is
+authorized only through the lane's account-scoped publisher and remains pending until remote SHA
+readback succeeds. There is no hosted, production, provider, payment, buyer, usage, or demand
+proof.
 
 ## Use it in three steps
 
@@ -61,6 +63,10 @@ NoteDock:
 
 NoteDock does not host media, transcribe calls or voice notes, infer creative intent, approve a
 cut, synchronize with an NLE, or replace Frame.io, Vimeo Review, or Filestage.
+
+Malformed frame timecodes are preserved as untimed notes with a visible warning. CSV exports
+neutralize formula-leading cells before spreadsheet use, and clipboard denial keeps CSV available
+as a recovery path.
 
 ## Input example
 

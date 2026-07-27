@@ -40,6 +40,23 @@ test("keeps an invalid submission recoverable", async ({ page }) => {
   await expect(page.getByLabel("Revision notes")).toHaveAttribute("aria-invalid", "true");
 });
 
+test("keeps clipboard denial recoverable through CSV", async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: {
+        writeText: () => Promise.reject(new Error("Clipboard denied for test")),
+      },
+    });
+  });
+  await page.goto("/");
+  await page.getByRole("button", { name: "Load sample" }).click();
+  await page.getByRole("button", { name: "Normalize notes" }).click();
+  await page.getByRole("button", { name: "Copy Markdown" }).click();
+  await expect(page.getByText("Could not copy Markdown. Download CSV instead.")).toBeVisible();
+  await expect(page.getByRole("button", { name: "Download CSV" })).toBeVisible();
+});
+
 test("exposes labeled controls, landmarks, and keyboard focus", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("button", { name: "Load sample" }).click();

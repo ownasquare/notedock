@@ -65,3 +65,17 @@ test("reports empty timecode-only lines instead of inventing a note", () => {
   assert.equal(result.notes.length, 0);
   assert.match(result.issues[0], /no revision text/);
 });
+
+test("preserves invalid frame timecodes as explicitly untimed notes", () => {
+  const result = parseRevisionNotes("00:00:10:24 Replace the end card", 24);
+  assert.equal(result.notes.length, 1);
+  assert.equal(result.notes[0].timecode, null);
+  assert.equal(result.notes[0].text, "Replace the end card");
+  assert.match(result.issues[0], /frame 24 outside 24 fps/);
+});
+
+test("neutralizes spreadsheet formulas in CSV exports", () => {
+  const result = parseRevisionNotes(`[Email | Maya]
+00:18 =HYPERLINK("https://example.invalid","review")`, 24);
+  assert.match(toCsv(result.notes), /"'=HYPERLINK\(""https:\/\/example\.invalid"",""review""\)"/);
+});

@@ -159,8 +159,12 @@ function renderResult() {
 }
 
 copyButton.addEventListener("click", async () => {
-  await navigator.clipboard.writeText(toMarkdown(projectName.value, currentResult.notes));
-  formMessage.textContent = "Markdown checklist copied.";
+  try {
+    await navigator.clipboard.writeText(toMarkdown(projectName.value, currentResult.notes));
+    formMessage.textContent = "Markdown checklist copied.";
+  } catch {
+    formMessage.textContent = "Could not copy Markdown. Download CSV instead.";
+  }
 });
 
 csvButton.addEventListener("click", () => {
