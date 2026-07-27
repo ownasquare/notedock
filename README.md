@@ -7,10 +7,10 @@ clients send feedback through email, chat, documents, and review tools. It parse
 timecodes, keeps source and reviewer labels, groups notes at the same moment, flags exact repeats,
 and exports Markdown or CSV.
 
-**Proof status:** validated local open-source experiment. Public GitHub repository publication is
-authorized only through the lane's account-scoped publisher and remains pending until remote SHA
-readback succeeds. There is no hosted, production, provider, payment, buyer, usage, or demand
-proof.
+**Proof status:** validated local open-source experiment published at
+[ownasquare/notedock](https://github.com/ownasquare/notedock). The account-scoped publisher and an
+independent Git readback verified matching local and remote `main` SHAs. There is no hosted,
+production, provider, payment, buyer, usage, or demand proof.
 
 ## Use it in three steps
 

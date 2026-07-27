@@ -1,16 +1,5 @@
 [
   {
-    "id": "github-publication",
-    "title": "Publish the public GitHub repository",
-    "what": "Use the account-scoped publisher to create or safely resume ownasquare/notedock and push main.",
-    "where": "/Users/fortunevieyra/Documents/Github/ai-projects/factory-apps/lane-05/notedock",
-    "how": "Never switch global GitHub auth; fail closed on any owner, name, origin, visibility, branch, or SHA mismatch.",
-    "test": "The publisher returns a public URL, main as default, and matching local and remote 40-character SHAs.",
-    "validate": "Keep local, GitHub publication, hosted deployment, provider, payment, usage, buyer, and commercial proof separate.",
-    "follow_up": "Record the verified receipt in lane state before claiming publication success.",
-    "estimate_minutes": 25
-  },
-  {
     "id": "registry-closeout",
     "title": "Close the registry and continuation handoff",
     "what": "Update the immutable app record, run record, app completion documentation, and canonical handoff with the GitHub receipt.",

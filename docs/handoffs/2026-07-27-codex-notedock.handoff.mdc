@@ -64,7 +64,7 @@ Fully implemented:
 - Six durable screenshots under `proof/screenshots/`.
 - README, security policy, contributing guide, changelog, license, product docs, and completion doc.
 
-Partially built or broken: none known. GitHub publication is the only pending release step.
+Partially built or broken: none known. GitHub publication is verified; registry closeout remains.
 
 Deliberately deferred: accounts, upload, media hosting, transcription, AI inference, NLE sync,
 client approvals, collaboration, analytics, payments, provider integrations, and hosted
@@ -156,9 +156,9 @@ Known limitations are deliberate product boundaries, not hidden debt. Do not cha
 - Playwright ownership of E2E.
 - MIT licensing and permissive dependency boundary.
 
-The active lane continuation explicitly authorizes only creation/push of the reserved public
-`ownasquare/notedock` repository through the account-scoped publisher. Do not deploy, contact
-users, add payments, call paid providers, or use any other publication path.
+The active lane continuation published only the reserved public
+`ownasquare/notedock` repository through the account-scoped publisher. Do not deploy, contact users,
+add payments, call paid providers, or use any other publication path.
 
 ## 9. Key Artifacts & References
 
@@ -176,8 +176,7 @@ users, add payments, call paid providers, or use any other publication path.
 
 Next run mode: ACTIVE_CONTINUATION
 
-Finish the release receipt, local commit, account-scoped GitHub publication, matching remote SHA
-readback, immutable registry update, and final lane-state closeout. Do not ideate or claim another
+Finish the immutable registry update and final lane-state closeout. Do not ideate or claim another
 app while Lane 05 remains active.
 
 ## 11. Continuation & Working Style Instructions

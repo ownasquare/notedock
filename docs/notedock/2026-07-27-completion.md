@@ -81,7 +81,8 @@ is stored in `proof/screenshots/` for desktop, tablet, and mobile in both light 
 - Hosted-dev proof: not attempted; no deployment authority.
 - Production proof: not attempted; no production authority.
 - Provider/dashboard proof: not applicable; no provider integration.
-- Publication proof: pending account-scoped GitHub publisher and remote SHA readback.
+- Publication proof: public `https://github.com/ownasquare/notedock`; account-scoped publisher and
+  independent `git ls-remote` readback matched local and remote `main`.
 - Payment proof: not attempted; no live payments.
 - Demand proof: public pain/workaround evidence only. There is no buyer, usage, payment, or market
   proof.
@@ -89,10 +90,9 @@ is stored in `proof/screenshots/` for desktop, tablet, and mobile in both light 
 
 ## Commit and release boundary
 
-The validated hardening changes will be committed on local branch `main` before publication.
-GitHub repository creation and push are authorized only for the reserved
-`ownasquare/notedock` target through the account-scoped publisher. Hosted deployment, provider
-actions, payments, user contact, and other publication surfaces remain unauthorized.
+The validated hardening changes were committed on local branch `main` and published only to the
+reserved `ownasquare/notedock` target through the account-scoped publisher. Hosted deployment,
+provider actions, payments, user contact, and other publication surfaces remain unauthorized.
 
 ## Warning triage
 
