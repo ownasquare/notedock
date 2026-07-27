@@ -1,0 +1,27 @@
+{
+  "name": "notedock",
+  "version": "0.1.0",
+  "description": "Turn scattered video revision notes into one sorted, source-preserving checklist.",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test",
+    "test:e2e": "playwright test",
+    "lint": "node scripts/audit.mjs lint",
+    "format:check": "node scripts/audit.mjs format",
+    "typecheck": "tsc -p jsconfig.json",
+    "audit:secrets": "node scripts/audit.mjs secrets",
+    "audit:license": "node scripts/audit.mjs license",
+    "package:smoke": "npm pack --dry-run"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^24.0.15",
+    "typescript": "^5.8.3"
+  }
+}

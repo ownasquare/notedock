@@ -1,0 +1,195 @@
+---
+description: "Validated local completion and continuation package for NoteDock"
+alwaysApply: false
+---
+
+# NoteDock Completion Handoff
+
+## INVENTORY NEXT ITEMS
+
+### No unresolved current-app integration items found
+
+- **Who:** NoteDock app and its local browser workflow.
+- **What:** No missed API integration, backend delta, provider handoff, or incomplete current-app
+  feature was found. NoteDock deliberately has no API, backend, provider, account, deployment, or
+  cross-repo runtime integration.
+- **How discovered:** Reviewed the full source tree, parser tests, Playwright workflow/export tests,
+  package scripts, security boundary, README, completion record, and six responsive/theme
+  screenshots.
+- **Where:** `/Users/fortunevieyra/Documents/Github/ai-projects/factory-apps/lane-05/notedock`.
+- **When:** The conclusion applies to the validated local experiment at its initial local commit.
+- **Detailed description:** The primary paste-to-checklist path is complete. The app preserves
+  ambiguous and untimed input instead of inventing creative intent. Its intentionally excluded
+  capabilities are not gaps.
+- **Acceptance criteria:**
+  - Unit, format, lint, type, secret, license, vulnerability, E2E, install, and package checks pass.
+  - Desktop, tablet, and mobile light/dark proof is manually inspected.
+  - The app remains limited to paste, normalize, and export.
+- **Definition of done:** The validated source, documentation, and proof files are locally committed;
+  the completed-app registry records the SHA; no unauthorized remote action occurs.
+- **Reason:** A local deterministic bridge solves the qualified narrow loss without requiring media
+  hosting, client accounts, AI inference, or collaboration infrastructure.
+- **Priority:** P4 for any optional future enhancement; no current defect is queued.
+- **Priority rationale:** The current experiment meets its one-outcome contract. A fresh lane run
+  must build a different qualified app rather than expand this one.
+- **Regression prevention:** Preserve parser tests, Playwright export/happy-path tests, license and
+  secret audits, and screenshot proofs.
+- **Testing:** Use Playwright for any future E2E work. If the app ever becomes React, Cypress remains
+  component-only.
+- **Audit policies:** automation guard discipline, semantic uniqueness, atomic claim, simplicity,
+  validation-proof selection, proof-label separation, and completion documentation.
+- **Other considerations:**
+  - Do not infer demand from public complaint evidence.
+  - Do not add uploads, tracking, AI inference, payments, or client contact under this claim.
+  - Do not push or deploy without separate explicit authority.
+
+## 1. Project Identity & Strategic Context
+
+NoteDock is an MIT-licensed local browser experiment for freelance video editors and small
+post-production teams. Its measurable success criterion is turning scattered pasted notes into one
+reviewable and exportable checklist while preserving source, reviewer, timecode, ambiguity, and
+untimed input. The design favors deterministic behavior, local data handling, minimal dependency
+surface, responsive accessibility, and honest proof boundaries.
+
+## 2. Current System State & Architecture Map
+
+Fully implemented:
+
+- Plain HTML/CSS/JavaScript UI at `index.html`, `styles.css`, and `src/app.js`.
+- Deterministic domain logic at `src/parser.js`.
+- Local development server at `scripts/serve.mjs`.
+- Audit tooling at `scripts/audit.mjs`.
+- Node unit tests at `tests/parser.test.js`.
+- Playwright workflow and proof suites under `playwright/`.
+- Six durable screenshots under `proof/screenshots/`.
+- README, security policy, contributing guide, changelog, license, product docs, and completion doc.
+
+Partially built or broken: none known.
+
+Deliberately deferred: accounts, upload, media hosting, transcription, AI inference, NLE sync,
+client approvals, collaboration, analytics, payments, provider integrations, deployment, and
+publication.
+
+Flow: pasted text → source-header/timecode parser → stable chronological grouping → source-preserved
+checklist → local Markdown clipboard or CSV download.
+
+## 3. Critical Decisions & Reasoning History
+
+- Chose scattered revision-note normalization after screening ten candidates and qualifying the
+  strongest against eight public sources.
+- Chose a static app because the outcome does not justify React runtime complexity.
+- Kept parsing deterministic and visible; ambiguous notes remain visible rather than guessed.
+- Positioned the app as a rescue bridge for notes outside Frame.io, Vimeo Review, or Filestage, not
+  as another media-review portal.
+- Removed a non-permissive testing dependency and used Playwright-native accessibility assertions.
+- Limited monetization to a documented hosted-team hypothesis with no demand claim.
+
+## 4. Recent Work & Iteration Log (High Priority)
+
+- Guard decision was `allow`.
+- Repaired self-learning discovery so app-owned automation records can hydrate.
+- Completed repository and immutable-registry comparison, then reserved claim
+  `20260727T064333-0700-lane05-notedock` under the atomic lock.
+- Built the complete app, tests, proof suite, security/license/docs surface, and local workflow.
+- Corrected issues exposed by E2E and screenshot inspection: hidden content, skip-link state, mobile
+  textarea position, theme locator state, Playwright browser availability, and audit self-matches.
+- Added real CSV download and clipboard-content proof.
+
+## 5. Testing, Validation & Quality Framework
+
+Required final matrix:
+
+- Clean package install: `npm ci --ignore-scripts`.
+- Parser/export unit tests: `npm test`.
+- Repository formatting/lint/type checks.
+- Secret, license, and high-severity vulnerability audits.
+- Playwright E2E across desktop, tablet, and mobile.
+- Manual review of desktop/tablet/mobile screenshots in light and dark mode.
+- npm package dry-run.
+
+Synthetic fixture use is limited to representative revision-note text. The actual app code runs
+unchanged in Playwright against the local server; there is no mocked backend.
+
+## 6. Debugging History & Failure Modes
+
+- Chromium was absent on the first E2E run; installing the Playwright browser resolved it.
+- A theme button changes accessible name with state, so tests must assert the current name.
+- CSS display declarations can override the HTML `hidden` contract; preserve the global
+  `[hidden]` rule.
+- Skip links can appear in full-page captures if offscreen styling is incomplete.
+- Filling a long textarea programmatically can leave the mobile view scrolled; reset selection and
+  scroll position after loading a sample.
+- Static secret scanners can match their own pattern declarations; keep scanners scoped.
+- Shared developer machines can already use a conventional preview port. NoteDock uses `4175`
+  after `4173` was confirmed to belong to an unrelated process; never kill an unverified listener.
+- Export assertions must reflect the real Markdown contract, including bold timecode delimiters.
+
+## 7. Established Processes & Effective Patterns
+
+1. Run the secret-safe rate guard before any automation work.
+2. Hydrate self-learning and read prior handoff/claim state.
+3. Discover ten problem-first candidates; do not invent unknown scores.
+4. Research only with enough independent evidence to meet the lane gates.
+5. Compare semantic fingerprints across every current repo and immutable registry item.
+6. Reserve under the atomic registry lock after a final reread.
+7. Build one narrow app and validate real local behavior.
+8. Separate local, hosted, production, provider, publication, payment, and demand proof.
+9. Commit locally only after final validation; do not push.
+
+## 8. Risks, Technical Debt & Strict Preservation Rules
+
+Known limitations are deliberate product boundaries, not hidden debt. Do not change or remove:
+
+- Source and reviewer attribution.
+- Untimed-note preservation.
+- Same-moment grouping and exact-repeat visibility.
+- Local browser-only data handling.
+- The one-outcome/three-action scope.
+- Playwright ownership of E2E.
+- MIT licensing and permissive dependency boundary.
+
+Do not add a remote, push, deploy, publish, contact users, add live payments, or call paid providers
+without explicit new authority.
+
+## 9. Key Artifacts & References
+
+- App root: `/Users/fortunevieyra/Documents/Github/ai-projects/factory-apps/lane-05/notedock`
+- Qualification record:
+  `/Users/fortunevieyra/Documents/Github/ai-projects/docs/1000-apps-100-days/runs/2026-07-27-lane-05-creator-production.md`
+- Claim:
+  `/Users/fortunevieyra/Documents/Github/ai-projects/docs/1000-apps-100-days/registry/claims/20260727T064333-0700-lane05-notedock.md`
+- Screenshots:
+  `/Users/fortunevieyra/Documents/Github/ai-projects/factory-apps/lane-05/notedock/proof/screenshots`
+- Exact commit SHA: read `git rev-parse HEAD` in the app root or consult the completed-app registry
+  record created after the initial commit.
+
+## 10. Next Steps & Prioritized Backlog
+
+Next run mode: INVENTORY_REFRESH_REQUIRED
+
+There is no continuation work on NoteDock. The next accepted lane run must inventory the current
+registry and create a different materially unique app from a new qualified claim. The automation
+queue should begin with the nine unresearched candidate areas in the lane record, refresh public
+evidence, add at least one newly discovered problem, and build only if every gate passes.
+
+## 11. Continuation & Working Style Instructions
+
+Treat current files and current Git state as truth. Read the latest automation handoff and registry
+under the guard before any new work. Be skeptical of inferred demand or completeness. Preserve
+exact public-source attribution, mark unknown scores as unknown, use atomic claim locking, and
+rerun validations after any material edit.
+
+## 12. Confidence & Freshness Assessment
+
+- Section 1: High - recently verified in this session.
+- Section 2: High - recently verified in this session.
+- Section 3: High - recently verified in this session.
+- Section 4: High - recently verified in this session.
+- Section 5: High - recently verified in this session.
+- Section 6: High - recently verified in this session.
+- Section 7: High - recently verified in this session.
+- Section 8: High - recently verified in this session.
+- Section 9: High - recently verified in this session.
+- Section 10: High - recently verified in this session.
+- Section 11: High - recently verified in this session.
+- Section 12: High - recently verified in this session.

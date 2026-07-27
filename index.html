@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Normalize scattered video revision notes into one sorted local checklist."
+    />
+    <title>NoteDock — revision notes, ready to edit</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">Skip to workspace</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="NoteDock home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span>NoteDock</span>
+      </a>
+      <button class="theme-button" id="theme-button" type="button" aria-pressed="false">
+        <span aria-hidden="true">◐</span>
+        <span id="theme-label">Dark mode</span>
+      </button>
+    </header>
+
+    <main id="workspace">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">For freelance video editors</p>
+        <h1 id="hero-title">Turn scattered client notes into one clean edit list.</h1>
+        <p class="hero-copy">
+          Paste feedback from email, chat, docs, or review exports. NoteDock sorts timecodes,
+          preserves who said what, flags repeats, and keeps everything on your device.
+        </p>
+        <ul class="trust-row" aria-label="Product boundaries">
+          <li>No account</li>
+          <li>No upload</li>
+          <li>No AI guessing</li>
+        </ul>
+      </section>
+
+      <section class="workspace-grid" aria-label="Revision-note workspace">
+        <form class="panel input-panel" id="notes-form">
+          <div class="panel-heading">
+            <div>
+              <p class="step-label">Step 1</p>
+              <h2>Paste the review round</h2>
+            </div>
+            <button class="button button-quiet" id="sample-button" type="button">Load sample</button>
+          </div>
+
+          <label for="project-name">Project name</label>
+          <input
+            id="project-name"
+            name="projectName"
+            type="text"
+            maxlength="80"
+            placeholder="Launch film — revision 2"
+            autocomplete="off"
+          />
+
+          <div class="field-row">
+            <div>
+              <label for="frame-rate">Timeline frame rate</label>
+              <select id="frame-rate" name="frameRate">
+                <option value="24">24 fps</option>
+                <option value="25">25 fps</option>
+                <option value="30">30 fps</option>
+                <option value="60">60 fps</option>
+              </select>
+            </div>
+            <div class="format-tip" aria-label="Source label format">
+              <span class="tip-title">Optional source header</span>
+              <code>[Email | Maya]</code>
+            </div>
+          </div>
+
+          <label for="raw-notes">Revision notes</label>
+          <textarea
+            id="raw-notes"
+            name="rawNotes"
+            rows="15"
+            required
+            aria-describedby="notes-help"
+            placeholder="[Email | Maya]&#10;00:18 Logo should enter later&#10;&#10;[Slack | Jordan]&#10;At 01:07 tighten the pause"
+          ></textarea>
+          <p class="field-help" id="notes-help">
+            One note per line. Timecodes can be MM:SS, HH:MM:SS, or HH:MM:SS:FF.
+          </p>
+
+          <button class="button button-primary" id="normalize-button" type="submit">
+            <span>Normalize notes</span>
+            <span aria-hidden="true">→</span>
+          </button>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </form>
+
+        <section class="panel result-panel" aria-labelledby="result-title">
+          <div class="panel-heading result-heading">
+            <div>
+              <p class="step-label">Steps 2–3</p>
+              <h2 id="result-title">Review and export</h2>
+            </div>
+            <div class="export-actions" id="export-actions" hidden>
+              <button class="button button-secondary" id="copy-button" type="button">
+                Copy Markdown
+              </button>
+              <button class="button button-secondary" id="csv-button" type="button">
+                Download CSV
+              </button>
+            </div>
+          </div>
+
+          <div class="empty-state" id="empty-state">
+            <div class="empty-icon" aria-hidden="true">00:42</div>
+            <h3>Your ordered edit list will appear here.</h3>
+            <p>
+              NoteDock keeps untimed requests visible and groups comments that land on the same
+              moment, so ambiguity does not disappear during cleanup.
+            </p>
+          </div>
+
+          <div id="result-content" hidden>
+            <div class="summary-grid" id="summary-grid" aria-label="Revision summary"></div>
+            <div class="notice" id="result-notice" role="status"></div>
+            <ol class="note-list" id="note-list"></ol>
+          </div>
+        </section>
+      </section>
+
+      <section class="boundary">
+        <p class="eyebrow">Built for the messy middle</p>
+        <h2>NoteDock does not replace your review portal.</h2>
+        <p>
+          It rescues the notes that escaped it. Creative intent stays with the editor; the app only
+          makes the source, timecode, and wording easier to review.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Local open-source experiment · Data stays in this browser tab.</p>
+    </footer>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
